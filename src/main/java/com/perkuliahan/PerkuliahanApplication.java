@@ -16,12 +16,16 @@ import com.perkuliahan.entity.Pertanyaan;
 import com.perkuliahan.entity.PlotMatakuliah;
 import com.perkuliahan.entity.Soal;
 import com.perkuliahan.repository.PlotMKRepository;
+import com.perkuliahan.repository.SoalRepository;
 
 @SpringBootApplication
 public class PerkuliahanApplication implements CommandLineRunner{
 
 	@Autowired
 	private PlotMKRepository plotMKRepo;
+	
+	@Autowired
+	private SoalRepository soalRepo;
 	
 	public static void main(String[] args) {
 		SpringApplication.run(PerkuliahanApplication.class, args);
@@ -66,7 +70,7 @@ public class PerkuliahanApplication implements CommandLineRunner{
 //		pertanyaan1.setJawaban2("Listrik");
 //		pertanyaan1.setJawaban3("Gaya");
 //		pertanyaan1.setJawaban4("Tidak ada yang benar");
-//		pertanyaan1.setStatusGambar("");
+//		pertanyaan1.setStatusGambar("https://www.skipprichard.com/wp-content/uploads/2018/10/bigstock-215605168.jpg");
 //		
 //		List<Pertanyaan> lstPertanyaans = new ArrayList<>();
 //		
@@ -79,6 +83,10 @@ public class PerkuliahanApplication implements CommandLineRunner{
 //		plotMK.setLstSoal(lstSoal);
 //		
 //		this.plotMKRepo.save(plotMK);
+//		
+//		Soal soalx = this.soalRepo.findByNamaSoal("Fundamental");
+//		System.out.println(soalx.getNamaSoal());
+		
 	}
 
 }
