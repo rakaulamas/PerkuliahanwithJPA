@@ -33,5 +33,21 @@ public class ModelMahasiswa implements ModelMahasiswaInterface{
 		return this.mahasiswaRepo.save(mahasiswa);
 		
 	}
+
+	@Override
+	public Mahasiswa getMahasiswaById(String id) {
+		// TODO Auto-generated method stub
+		return ((Mahasiswa)this.mahasiswaRepo.findByIdMahasiswa(Long.parseLong(id)));
+	}
+
+	@Override
+	public void deleteMahasiswa(String id) {
+		
+		this.mahasiswaRepo.deleteById(Long.parseLong(id));
+	}
+
+	
+
+	
 	
 }

@@ -20,7 +20,7 @@ public class Nilai {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-		private long id;
+		private long idNilai;
 		private String nilai; 
 	
 }

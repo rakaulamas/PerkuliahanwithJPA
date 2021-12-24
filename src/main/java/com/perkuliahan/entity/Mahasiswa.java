@@ -20,7 +20,7 @@ public class Mahasiswa {
 		
 		@Id
 		@GeneratedValue(strategy = GenerationType.IDENTITY)
-		private long id;
+		private long idMahasiswa;
 		private String nim;
 		private String namaMahasiswa;
 		private String jenisKelamin;

@@ -86,7 +86,7 @@ public class PerkuliahanApplication implements CommandLineRunner{
 //		
 //		Soal soalx = this.soalRepo.findByNamaSoal("Fundamental");
 //		System.out.println(soalx.getNamaSoal());
-		
+//		
 	}
 
 }

@@ -17,12 +17,14 @@ public class HomePage {
 		@Autowired
 		ModelMahasiswa modelMahasiswa;
 	
-		@GetMapping("/")
-		public String viewHomePage(Model model) {
-//			model.addAttribute("mahasiswa",mahasiswaRepo.findAll());
-			
-			return "index";
-		}
+		
+//		
+//		@GetMapping("/")
+//		public String viewHomePage(Model model) {
+////			model.addAttribute("mahasiswa",mahasiswaRepo.findAll());
+//			
+//			return "index";
+//		}
 		
 		
 		
