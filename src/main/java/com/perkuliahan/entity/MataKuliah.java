@@ -20,7 +20,7 @@ public class MataKuliah {
 		
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-		private long idMatkul;
+		private long idMataKuliah;
 		private String namaMataKuliah;
 	
 }

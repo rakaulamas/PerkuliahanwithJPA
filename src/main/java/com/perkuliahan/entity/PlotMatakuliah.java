@@ -37,7 +37,7 @@ public class PlotMatakuliah {
 	
 	private Dosen dosen;
 	@OneToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name="id_mamahasiswa")
+	@JoinColumn(name="id_mahasiswa")
 	
 	private Mahasiswa mahasiswa;
 

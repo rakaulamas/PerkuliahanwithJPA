@@ -34,7 +34,7 @@ public class Soal {
 		
 		
 		@OneToMany(cascade = CascadeType.ALL)
-		@JoinColumn(name="id_pertanyaan", referencedColumnName = "id")
+		@JoinColumn(name="id_soal", referencedColumnName = "id")
 		private List<Pertanyaan> lstPertanyaan = new ArrayList<>();
 		
 		

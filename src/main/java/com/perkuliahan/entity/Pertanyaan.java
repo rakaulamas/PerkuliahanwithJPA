@@ -20,9 +20,9 @@ public class Pertanyaan {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-		private long id;
+		private long idPertanyaan;
 		
-		private String pertanyaan;
+		private String pertanyaan1;
 		private String jawaban1;
 		private String jawaban2;
 		private String jawaban3;

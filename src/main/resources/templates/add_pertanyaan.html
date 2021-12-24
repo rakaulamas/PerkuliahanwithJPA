@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Add Pertanyaan</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+<body>
+<h1>Input Pertanyaan</h1>
+
+<form action="#" th:action="@{/pertanyaan/view}" th:object="${pertanyaan}" method="post">
+
+
+<div class="mb-3">
+  <label for="nim" class="form-label">Pertanyaan</label>
+  <input type="text" class="form-control" id="pertanyaan1" placeholder="Pertanyaan" th:field="*{pertanyaan1}">
+</div>
+
+<div class="mb-3">
+  <label for="nim" class="form-label">Jawaban1</label>
+  <input type="text" class="form-control" id="jawaban1" placeholder="Jawaban1" th:field="*{jawaban1}">
+</div>
+
+<div class="mb-3">
+  <label for="nim" class="form-label">Jawaban2</label>
+  <input type="text" class="form-control" id="jawaban2" placeholder="Jawaban2" th:field="*{jawaban2}">
+</div>
+
+<div class="mb-3">
+  <label for="nim" class="form-label">Jawaban3</label>
+  <input type="text" class="form-control" id="jawaban3" placeholder="Jawaban3" th:field="*{jawaban3}">
+</div>
+
+<div class="mb-3">
+  <label for="nim" class="form-label">Jawaban4</label>
+  <input type="text" class="form-control" id="jawaban4" placeholder="Jawaban4" th:field="*{jawaban4}">
+</div>
+
+<div class="mb-3">
+  <label for="nim" class="form-label">JawabanBenar</label>
+  <input type="text" class="form-control" id="jawabanBenar" placeholder="JawabanBenar" th:field="*{jawabanBenar}">
+</div>
+
+<div class="mb-3">
+  <label for="nim" class="form-label">StatusGambar</label>
+  <input type="text" class="form-control" id="statusGambar" placeholder="StatusGambar" th:field="*{statusGambar}">
+</div>
+
+
+
+<input type="hidden" th:field="*{idPertanyaan}">
+<p><input type="submit" value="Submit" /> <input type="reset" value="Reset" />
+
+</form>
+
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>
+</html>
