@@ -53,7 +53,7 @@ public class PertanyaanPage {
 //		return "view_pertanyaan";
 //	}
 	
-	@PostMapping("/pertanyaan/add")
+	@PostMapping("/pertanyaan/view")
 	public String addPertanyaan(@RequestParam(value= "file") MultipartFile file, @ModelAttribute Pertanyaan pertanyaan, Model model) {
 		System.out.println("Working Directory = " + System.getProperty("user.dir"));
 		System.out.println(file.getOriginalFilename());
@@ -65,10 +65,10 @@ public class PertanyaanPage {
 	        } catch (IOException e) {
 	            e.printStackTrace();
 	        }
-		 	pertanyaan.setStatusGambar(UPLOAD_DIR + fileName);
+		 	pertanyaan.setStatusGambar("/uploads/" + fileName);
 		 	this.modelPertanyaan.addPertanyaan(pertanyaan);
-		 	model.addAttribute("pertanyaan", new Pertanyaan());
-		 	return "add_pertanyaan";
+		 	model.addAttribute("listPertanyaan", modelPertanyaan.getAllPertanyaan());
+		 	return "view_pertanyaan";
 		}
 	
 	
