@@ -8,7 +8,7 @@
 <body>
 <h1>Input Pertanyaan</h1>
 
-<form action="#" th:action="@{/pertanyaan/view}" th:object="${pertanyaan}" method="post">
+<form action="#" th:action="@{/pertanyaan/add}" th:object="${pertanyaan}" method="post" enctype="multipart/form-data">
 
 
 <div class="mb-3">
@@ -42,10 +42,9 @@
 </div>
 
 <div class="mb-3">
-  <label for="nim" class="form-label">StatusGambar</label>
-  <input type="text" class="form-control" id="statusGambar" placeholder="StatusGambar" th:field="*{statusGambar}">
+  <label for="formFile" class="form-label">Status Gambar</label>
+  <input class="form-control" th:name="file" type="file" id="formFile">
 </div>
-
 
 
 <input type="hidden" th:field="*{idPertanyaan}">
