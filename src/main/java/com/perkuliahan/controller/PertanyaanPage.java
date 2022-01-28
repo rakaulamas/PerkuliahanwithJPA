@@ -20,6 +20,7 @@ import org.springframework.web.multipart.MultipartFile;
 import com.perkuliahan.entity.MataKuliah;
 import com.perkuliahan.entity.Pertanyaan;
 import com.perkuliahan.services.ModelPertanyaan;
+import com.perkuliahan.utility.FileUtility;
 
 @Controller
 public class PertanyaanPage {
@@ -54,23 +55,31 @@ public class PertanyaanPage {
 //	}
 	
 	@PostMapping("/pertanyaan/view")
-	public String addPertanyaan(@RequestParam(value= "file") MultipartFile file, @ModelAttribute Pertanyaan pertanyaan, Model model) {
-		System.out.println("Working Directory = " + System.getProperty("user.dir"));
-		System.out.println(file.getOriginalFilename());
-		String fileName = StringUtils.cleanPath(file.getOriginalFilename());
-		
-		try {
-	            Path path = Paths.get(UPLOAD_DIR + fileName);
-	            Files.copy(file.getInputStream(), path, StandardCopyOption.REPLACE_EXISTING);
-	        } catch (IOException e) {
-	            e.printStackTrace();
-	        }
-		 	pertanyaan.setStatusGambar("/uploads/" + fileName);
+	public String addPertanyaan(@RequestParam(value= "file") MultipartFile file, @ModelAttribute Pertanyaan pertanyaan, Model model) throws IOException {{
+//		System.out.println("Working Directory = " + System.getProperty("user.dir"));
+//		System.out.println(file.getOriginalFilename());
+//		String fileName = StringUtils.cleanPath(file.getOriginalFilename());
+//		
+//		try {
+//	            Path path = Paths.get(UPLOAD_DIR + fileName);
+//	            Files.copy(file.getInputStream(), path, StandardCopyOption.REPLACE_EXISTING);
+//	        } catch (IOException e) {
+//	            e.printStackTrace();
+//	        }
+			
+			String fileName = StringUtils.cleanPath(file.getOriginalFilename());
+			pertanyaan.setStatusGambar(fileName);
+	 
+	        String uploadDir = "user-photos/";
+	 
+	        FileUtility.saveFile(uploadDir, fileName, file);
+				
+		 	pertanyaan.setStatusGambar("/"+ uploadDir + fileName);
 		 	this.modelPertanyaan.addPertanyaan(pertanyaan);
 		 	model.addAttribute("listPertanyaan", modelPertanyaan.getAllPertanyaan());
-		 	return "view_pertanyaan";
+		 	return "redirect:/pertanyaan/view";
 		}
-	
+	}
 	
 	@GetMapping("/pertanyaan/update/{id}")
 	public String viewUpdatePertanyaan(@PathVariable String id, Model model) {
